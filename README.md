@@ -7,7 +7,7 @@
 
 - [Repo]( https://github.com/plshazer/rj-16940-lopezslevin "<project-name> Repo")
 
-- [View In VSCODE ONLINE]( https://github1s.com/plshazer/rj-16940-lopezslevin/"<project-name> View In VSCODE ONLINE")
+- [View In VSCODE ONLINE]( https://github1s.com/plshazer/rj-16940-lopezslevin "<project-name> View In VSCODE ONLINE")
 
 - [Issues](https://github.com/plshazer/rj-16940-lopezslevin/issues "Issues Page")
 
