@@ -1,4 +1,5 @@
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button, Container } from 'react-bootstrap'
+import CartWidget from '../Cart/CartWidget.js';
 
 
 function NavBar() {
@@ -11,6 +12,7 @@ function NavBar() {
       <Nav.Link href="#home">Inicio</Nav.Link>
       <Nav.Link href="#pricing">Contactanos</Nav.Link>
     </Nav>
+    <CartWidget />
     </Container>
   </Navbar>
         
