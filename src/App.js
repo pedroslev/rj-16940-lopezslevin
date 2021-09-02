@@ -7,9 +7,9 @@ import ProductViewer from './components/Cards/ProductViewer.js'
 function App() {
   return (
     <div className="App">      
-  <NavBar/>
-  <ProductViewer />
-<CartWidget />
+      <NavBar/>
+      <ProductViewer />
+      <CartWidget />
     </div>
   );
 }

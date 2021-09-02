@@ -1,17 +1,28 @@
 .Card{
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .itemCard{
     padding: 0.2em;
     margin: 0.5em;
     border-radius: 1.5em;
-    border-color: black;
+    border-color: grey;
     border-width: 0.115em;
+    background-color: transparent;
+    color: white;
 }
 
 .itemCard img{
+    border-color: black;
+    border-style: solid;
+    border-width: 0.2em;
     border-radius: 1.5em;
     background-color: transparent;
+}
+
+.itemCard:hover{
+    border-width: 0.3em;
+    border-color: white;
 }
