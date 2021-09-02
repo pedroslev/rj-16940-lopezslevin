@@ -1,0 +1,17 @@
+.Card{
+    display: flex;
+    flex-direction: row;
+}
+
+.itemCard{
+    padding: 0.2em;
+    margin: 0.5em;
+    border-radius: 1.5em;
+    border-color: black;
+    border-width: 0.115em;
+}
+
+.itemCard img{
+    border-radius: 1.5em;
+    background-color: transparent;
+}
