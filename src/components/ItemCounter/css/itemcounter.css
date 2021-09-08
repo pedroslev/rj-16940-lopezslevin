@@ -1,0 +1,13 @@
+.Quantity{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.Quantity p{
+    font-size: 1.5em;
+    font-weight: 700;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}

@@ -26,3 +26,9 @@
     border-width: 0.3em;
     border-color: white;
 }
+
+.Buy{
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+}
