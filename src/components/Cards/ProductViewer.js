@@ -13,6 +13,24 @@ const Productos = [{Id:0, Nombre:"Coca", Descripcion:"500ml en lata", Precio:"25
 
 function ProductViewer() {       
     const runCallback = (result) => {return result();};
+
+
+    const GetProductos = () => {
+        return new Promise ((resolve) => {
+            setTimeout(() => {resolve(Productos);}, 3500);
+        });
+    };
+
+    const GetProductosPromise = async () => {
+        try {
+            const productos = await GetProductos();
+            console.log(productos);
+        } catch (error) {
+            console.log("error:", error);
+        }
+    };
+
+    GetProductosPromise();
     return (
    
             <div className="Card">
@@ -22,11 +40,13 @@ function ProductViewer() {
                         let result = [];
                         for (let index = 0; index < Productos.length; index++) {
                             if(Productos[index].stock !=0){
-                                result.push(<Cards productos={Productos[index]}/>);
+                                result.push(<Cards key={Productos[index].Id} productos={Productos[index]}/>);
                             }
                         }
                         return result
                     })
+
+                    
                 }
             </div>
     )
