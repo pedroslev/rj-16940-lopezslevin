@@ -7,10 +7,9 @@ function NavBar() {
         
        <Navbar bg="dark" variant="dark">
     <Container>
-    <Navbar.Brand href="#home">DevBar</Navbar.Brand>
+    <Navbar.Brand href="/">DevBar</Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="#home">Inicio</Nav.Link>
-      <Nav.Link href="#pricing">Contactanos</Nav.Link>
+      <Nav.Link href="/">Menu</Nav.Link>
     </Nav>
     <CartWidget />
     </Container>
