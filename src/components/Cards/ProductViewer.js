@@ -35,22 +35,20 @@ function ProductViewer() {
             items.map((products) => {
                 if(products.stock != 0){
                 return <Card style={{ width: '16rem' }} className="itemCard">
-                <a href={`/products?id=` + products.id} >
                 <Card.Img variant="top" src={products.image} />
                 <Card.Body>
+                <a href={`/products?id=` + products.id} >
                     <Card.Title>{products.title}</Card.Title>
-                    <Card.Text>
-                    {products.description}
-                    </Card.Text>
                     <Card.Text>
                     ${products.price}
                     </Card.Text>
-                    <ItemCount stock={products.stock} />
+                    <ItemCount key={products.stock} stock={products.stock} />
+                    </a>
                     <div className="Buy">
                     <Button variant="primary">Comprar</Button>
                     </div>
                 </Card.Body>
-                </a>
+                
                 </Card>
                 
                 
