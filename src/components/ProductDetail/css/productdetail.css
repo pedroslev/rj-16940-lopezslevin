@@ -1,0 +1,11 @@
+.ProductImage{
+    margin-top: 5em;
+    margin-left: 40em;
+}
+
+@media (max-width: 1000px) {
+    .ProductImage {
+        margin-top: 5em;
+        margin-left: 0em;
+    }
+  }

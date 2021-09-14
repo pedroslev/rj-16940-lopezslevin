@@ -1,0 +1,202 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "title": "AGUA BONAQUA 1.5L",
+      "categoria": "Bebidas sin alcohol",
+      "description": "Botella BonAqua 1.5L",
+      "price": "200",
+      "stock": 10,
+      "image": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3040339_f.jpg"
+  },
+  {
+      "id": 1,
+      "title": "AGUA VILLAVICENCIO 500ML",
+      "categoria": "Bebidas sin alcohol",
+      "description": "500ml Botella plastica Villavicencio",
+      "price": "100",
+      "stock": 10,
+      "image": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3040004_f.jpg"
+  },
+  {
+      "id": 2,
+      "title": "EVIAN 500ML",
+      "categoria": "Bebidas sin alcohol",
+      "description": "Botella de agua mineral Evian 500mL",
+      "price": "350",
+      "stock": 10,
+      "image": "https://dojiw2m9tvv09.cloudfront.net/50013/product/productos_evin-agua-mineral-x-500-ml5209.png"
+  },
+  {
+      "id": 3,
+      "title": "ANDES ROJA",
+      "categoria": "Cervezas",
+      "description": "Andes Roja 473ml en lata",
+      "price": "175",
+      "stock": 10,
+      "image": "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Roja-473ml.jpg"
+  },
+  {
+      "id": 4,
+      "title": "ANDES RUBIA",
+      "categoria": "Cervezas",
+      "description": "Andes Rubia 473ml en lata",
+      "price": "175",
+      "stock": 10,
+      "image": "https://elbaronline.com.ar/wp-content/uploads/2021/03/Andes-Rubia-473ml.jpg"
+  },
+  {
+      "id": 5,
+      "title": "ANDES RUBIA 1L",
+      "categoria": "Cervezas",
+      "description": "Botella Andes Rubia 1L",
+      "price": "450",
+      "stock": 10,
+      "image": "https://d2r9epyceweg5n.cloudfront.net/stores/001/295/241/products/web-621-062a3e78790545217f15969103416520-640-0.png"
+  },
+  {
+      "id": 6,
+      "title": "IMPERIAL IPA 473ML",
+      "categoria": "Cervezas",
+      "description": "Imperial IPA 473ml en lata",
+      "price": "165",
+      "stock": 10,
+      "image": "https://http2.mlstatic.com/D_NQ_NP_646227-MLA43508646335_092020-O.jpg"
+  },
+  {
+      "id": 7,
+      "title": "QUILMES CLASICA 1L",
+      "categoria": "Cervezas",
+      "description": "Botella Quilmes Clasica 1L",
+      "price": "350",
+      "stock": 10,
+      "image": "https://static.cotodigital3.com.ar/sitios/images/full/00238200/00238214.jpg?3.0.131d"
+  },
+  {
+      "id": 8,
+      "title": "PINTA HORMIGA NEGRA",
+      "categoria": "Cervezas",
+      "description": "Pinta de Cerveza Rubia Hormiga Negra",
+      "price": "400",
+      "stock": 10,
+      "image": "https://hormiganegra.com.ar/wp-content/uploads/2020/09/galeria-chn_0001_portada-4.jpg"
+  },
+  {
+      "id": 9,
+      "title": "TRIPLE BURGUER LAKASA",
+      "categoria": "Hamburguesas",
+      "description": "Triple medallon (200gr c/u), cheddar, bacon, cebolla caramelizada y huevo frito",
+      "price": "800",
+      "stock": 10,
+      "image": "https://hormiganegra.com.ar/wp-content/uploads/2019/10/galeria-chn_0005_portada-14.jpg"
+  },
+  {
+      "id": 10,
+      "title": "NOT-S1MPLE",
+      "categoria": "Hamburguesas",
+      "description": "Un medallon (350gr), cheddar, cebolla morada, tomate, bacon, lechuga, pepino con salsa LAKASA",
+      "price": "650",
+      "stock": 10,
+      "image": "https://www.hola.com/imagenes/cocina/noticiaslibros/20210528190401/dia-internacional-hamburguesa-recetas-2021/0-957-454/dia-hamburguesa-m.jpg"
+  },
+  {
+      "id": 11,
+      "title": "CHICKEN FINGERS",
+      "categoria": "Entradas",
+      "description": "15 chiquen fingers con salsas para picar",
+      "price": "350",
+      "stock": 10,
+      "image": "https://cdn-60451594c1ac18116c8abcd2.closte.com/wp-content/uploads/2018/03/Chicken-fingers-2105-600x600.jpg"
+  },
+  {
+      "id": 12,
+      "title": "BASTONCITOS DE MOZZARELLA",
+      "categoria": "Entradas",
+      "description": "10 Bastones de mozzarela con salsa de tomate picante",
+      "price": "300",
+      "stock": 10,
+      "image": "https://imagenes.montevideo.com.uy/imgnoticias/202105/_W576_H432/761542.jpg"
+  },
+  {
+      "id": 13,
+      "title": "AROS DE CEBOLLA LAKASA",
+      "categoria": "Entradas",
+      "description": "Aros de cebolla con pesto",
+      "price": "320",
+      "stock": 10,
+      "image": "https://i.blogs.es/ed64ab/2/1366_2000.jpg"
+  },
+  {
+      "id": 14,
+      "title": "PEPSI COMUN",
+      "categoria": "Gaseosas",
+      "description": "Pepsi comun en lata 354cc",
+      "price": "110",
+      "stock": 10,
+      "image": "https://depotexpress.com.ar/tienda/wp-content/uploads/2020/06/Gaseosa-Pepsi-Lata-X-354.jpg"
+  },
+  {
+      "id": 15,
+      "title": "PEPSI LIGHT",
+      "categoria": "Gaseosas",
+      "description": "Pepsi light 355ml en lata",
+      "price": "110",
+      "stock": 10,
+      "image": "https://s3.us-east-2.amazonaws.com/forpi.co/AA110500800.jpg"
+  },
+  {
+      "id": 16,
+      "title": "FANTA 350ML",
+      "categoria": "Gaseosas",
+      "description": "Fanta 350ml en lata",
+      "price": "120",
+      "stock": 10,
+      "image": "https://www.pasosonline.com.ar/wp-content/uploads/2018/08/coca-cola-sin-azucar-1500ml.jpg"
+  },
+  {
+      "id": 17,
+      "title": "7UP COMUN",
+      "categoria": "Gaseosas",
+      "description": "7up en Lata 354ml",
+      "price": "115",
+      "stock": 10,
+      "image": "https://cdn.shopify.com/s/files/1/0254/2947/5433/products/gaseosa-7up-lata-473-siempreencasa_1000x.png?v=1629814523"
+  },
+  {
+      "id": 18,
+      "title": "SINGLE",
+      "categoria": "Hamburguesas",
+      "description": "Un medallon (200gr), lechuga, tomate, cebolla morada y doble cheddar",
+      "price": "550",
+      "stock": 10,
+      "image": "https://www.hola.com/imagenes/cocina/noticiaslibros/20210528190401/dia-internacional-hamburguesa-recetas-2021/0-957-455/adobe-burger-1-a.jpg"
+  },
+  {
+      "id": 19,
+      "title": "BOCHAS DE HELADO",
+      "categoria": "Postres",
+      "description": "3 Bochas de helado a eleccion; Vainilla, Chocolate, Dulce de leche, Frutilla",
+      "price": "400",
+      "stock": 10,
+      "image": "https://i.pinimg.com/originals/91/2a/38/912a3882816c282672fe64a63adbe1bc.jpg"
+  },
+  {
+      "id": 20,
+      "title": "FLAN CASERO",
+      "categoria": "Postres",
+      "description": "Porcion de Flan casero con o sin dulce de leche",
+      "price": "200",
+      "stock": 10,
+      "image": "https://www.divinacocina.es/wp-content/uploads/flan-de-dulce-de-leche.plato_.jpg"
+  },
+  {
+      "id": 21,
+      "title": "MOUSSE DE CHOCOTORTA",
+      "categoria": "Postres",
+      "description": "Mouse de chocotorta con trozos de galletas en vaso",
+      "price": "250",
+      "stock": 10,
+      "image": "https://i.pinimg.com/originals/d4/7d/76/d47d76e58a505cb5fdfd0e6ca53544e7.jpg"
+  }
+  ]
+}

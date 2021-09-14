@@ -1,13 +1,19 @@
-import './App.css';
-import NavBar from './components/NavBar/NavBar.js';
-import ProductViewer from './components/Cards/ProductViewer.js'
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Home from './Home';
+import Products from './Products';
 
 function App() {
   return (
-    <div className="App">      
-      <NavBar/>
-      <ProductViewer />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/products">
+          <Products />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
