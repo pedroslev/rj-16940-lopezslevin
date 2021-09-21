@@ -26,9 +26,6 @@ function ProductDetail() {
         .catch((error) => console.log(`Error al cargar datos de json-db: ${error.status}`))
     }, []);
 
-
-
-
     return (
         
             <div className="ProductImage">
