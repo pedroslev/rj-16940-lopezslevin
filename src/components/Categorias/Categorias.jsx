@@ -18,7 +18,6 @@ function Categorias() {
             }
         })
         .then((categorias) => setCategorias(categorias))
-        .then(()=> console.log(categorias))
         .catch((error) => console.log(`Error al cargar datos de json-db: ${error.status}`))
     }, []);
 

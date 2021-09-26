@@ -4,9 +4,11 @@ import Products from './pages/Products';
 import NavBar from './components/NavBar/NavBar.js';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer/Footer.jsx'
+import { CartProvider } from "./context/CartContext.js";
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
     <NavBar/>
       <Switch>
@@ -16,6 +18,7 @@ function App() {
       </Switch>
       <Footer />
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

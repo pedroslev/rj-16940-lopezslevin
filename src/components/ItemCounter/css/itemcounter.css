@@ -1,13 +1,19 @@
 .Quantity{
     display: flex;
     justify-content: space-around;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
+
 
 .Quantity p{
     font-size: 1.5em;
     font-weight: 700;
     padding-left: 0.5em;
     padding-right: 0.5em;
+}
+
+.boton{
+height: 2.5em;
+
 }
