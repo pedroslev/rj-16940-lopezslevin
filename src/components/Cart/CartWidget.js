@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from './Modal.js';
 import Button from 'react-bootstrap/Button';
-import {Stylesheet} from './css/Cart.css';
+import './css/Cart.css';
 import cartlogo from './media/cart.svg'
 
 function Cart() {

@@ -13,7 +13,7 @@ function Footer() {
             <h6 className="text-uppercase mb-4 font-weight-bold">
               DevBar
             </h6>
-            <p>
+            <p style={{color: 'white'}}>
               Hola! somos un bar hecho por desarrolladores, para desarrolladores!
             </p>
           </MDBCol>
@@ -21,13 +21,13 @@ function Footer() {
           <MDBCol md="4" lg="3" xl="3" className="mx-auto mt-3">
             <h6 className="text-uppercase mb-4 font-weight-bold">Contact</h6>
             <p>
-              <i className="fa fa-home mr-3" /> Buenos Aires, AR
+              <i className="fa fa-home mr-3" > Buenos Aires, AR</i>
             </p>
             <p>
-              <i className="fa fa-envelope mr-3" /> plopezslevin@gmail.com
+              <i className="fa fa-envelope mr-3"> plopezslevin@gmail.com</i>
             </p>
             <p>
-              <i className="fa fa-phone mr-3" /> +5491161238744
+              <i className="fa fa-phone mr-3"> +5491161238744 </i>
             </p>
           </MDBCol>
         </MDBRow>

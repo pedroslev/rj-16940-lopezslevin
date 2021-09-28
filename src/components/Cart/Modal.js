@@ -2,33 +2,17 @@ import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
 import { useCart } from '../../context/CartContext';
+import trash from './media/trash.svg'
 
 function Cart(props) {
 
-  const {cart} = useCart();
-  console.log(cart)
+  const {cart, DeleteCart} = useCart();
+  const largo = cart.length
+  let total = 0
+  for (let index = 0; index < largo; index++) {
+    total = total + cart[index].price * cart[index].cantidad
+  }
 
-  //SUPRA TEST
-  const [carro, setCarro] = React.useState([]);
-  React.useEffect(() => {
-    for (let index = 0; index < carro.length; index++) {  
-      const url = "http://localhost:3001/products/"+cart[index].id;
-      fetch(url)
-      .then((response) => {
-          if(response.ok){
-              return response.json();
-          }else{
-              throw response;
-          }
-      })
-      .then((carro) => setCarro(carro))
-      .then(()=> console.log(carro))
-      .catch((error) => console.log(`Error al cargar datos de json-db: ${error.status}`))
-  }}, []);
-  
-  
-  
-  
     return (
         <>
             <Modal
@@ -53,21 +37,32 @@ function Cart(props) {
             </thead>
             <tbody id="order">
             {
-            carro.map((products) => {
-            <tr>
-              <td>${products.title}</td>
-              <td>${carro[0].cantidad}</td>
-              <td>${products.price * carro[0].cantidad}</td>
-            </tr>
-            })
+            cart.map((products) => {
+              if(largo!=0){
+                return  <tr>
+                <td>{products.title}</td>
+                <td>{products.cantidad}</td>
+                <td>${products.price}</td>
+                <td><button className="btn btn-outline-secondary" onClick={() => DeleteCart(products.id)}><img style={{width: '1em'}} src={trash}></img></button></td>
+              </tr>
+              }else{
+                return <tr>
+                  <td>no hay nada en el carro</td>
+                  </tr>
+              }
+              })
             }
             <tr id="totalprice">
+              <td></td>
+              <td>Total: </td>
+              <td>{total}</td>
             </tr>
             </tbody>
           </table>
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Cerrar</Button>
+        <Button href="/buy">Comprar</Button>
       </Modal.Footer>
     </Modal>
     </>
