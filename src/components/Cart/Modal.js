@@ -6,7 +6,7 @@ import trash from './media/trash.svg'
 
 function Cart(props) {
 
-  const {cart, DeleteCart} = useCart();
+  const {cart, DeleteCart, ClearCart} = useCart();
   const largo = cart.length
   let total = 0
   for (let index = 0; index < largo; index++) {
@@ -38,31 +38,26 @@ function Cart(props) {
             <tbody id="order">
             {
             cart.map((products) => {
-              if(largo!=0){
                 return  <tr>
                 <td>{products.title}</td>
                 <td>{products.cantidad}</td>
                 <td>${products.price}</td>
                 <td><button className="btn btn-outline-secondary" onClick={() => DeleteCart(products.id)}><img style={{width: '1em'}} src={trash}></img></button></td>
               </tr>
-              }else{
-                return <tr>
-                  <td>no hay nada en el carro</td>
-                  </tr>
-              }
               })
             }
             <tr id="totalprice">
               <td></td>
               <td>Total: </td>
-              <td>{total}</td>
+              <td>${total}</td>
             </tr>
             </tbody>
           </table>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Cerrar</Button>
-        <Button href="/buy">Comprar</Button>
+        <Button variant="danger" onClick={ClearCart}>Vaciar</Button>
+        <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
+        <Button variant="success" href="/buy">Comprar</Button>
       </Modal.Footer>
     </Modal>
     </>

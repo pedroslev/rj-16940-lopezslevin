@@ -52,7 +52,7 @@ function ProductViewer() {
                     </Card.Text>
                     <ItemCount key={products.stock} stock={products.stock} id={products.id} />
                     <div className="Buy">
-                    <Button variant="primary" id={`buy`+products.id} onClick={() => AddToCart(products.id, document.getElementById('cantidad'+products.id).innerHTML)}>Comprar</Button>
+                    <Button variant="primary" id={`buy`+products.id} onClick={() => AddToCart(products.id, products.title, products.price,document.getElementById('cantidad'+products.id).innerHTML)}>Agregar</Button>
                     </div>
                 </Card.Body>                
                 </Card>

@@ -1,7 +1,13 @@
 import React from 'react'
 import '../css/buy/buy.css'
 import icon from "../media/icon.png"
+import { useCart } from '../context/CartContext';
+
 function Buy() {
+
+  const {cart, AddToCart} = useCart();
+  console.log(cart)
+
     return (
         <section className="shopping-cart dark">
         <div className="container" id="container">
