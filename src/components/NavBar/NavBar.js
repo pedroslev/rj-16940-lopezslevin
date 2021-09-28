@@ -1,8 +1,10 @@
 import { Navbar,Nav, Container } from 'react-bootstrap'
 import CartWidget from '../Cart/CartWidget.js';
-
+import { useCart } from '../../context/CartContext';
 
 function NavBar() {
+  const {cart} = useCart();
+  console.log(cart.length)
     return (
         
        <Navbar bg="dark" variant="dark">
@@ -11,7 +13,7 @@ function NavBar() {
     <Nav className="me-auto">
       <Nav.Link href="/">Menu</Nav.Link>
     </Nav>
-    <CartWidget />
+    <CartWidget items={cart.length}/>
     </Container>
   </Navbar>
         
