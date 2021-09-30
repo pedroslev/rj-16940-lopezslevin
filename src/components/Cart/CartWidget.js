@@ -3,15 +3,19 @@ import Modal from './Modal.js';
 import Button from 'react-bootstrap/Button';
 import './css/Cart.css';
 import cartlogo from './media/cart.svg'
+import { CartProvider, useCart } from '../../context/CartContext';
 
-function Cart(props) {
+function Cart() {
     const [modalShow, setModalShow] = React.useState(false);
+    const {cartLength} = useCart();
+
+
+
     return (
     <>
-    <div className="Cart sticky" id="cartwidget">
+    <div className="Cart sticky Ocultar" id="cartwidget">
     <Button variant="dark" onClick={() => setModalShow(true)}>
-          {/* no esta cargando la imagen svg */}
-          <img src={cartlogo} className="cartsvg" alt=""/>{props.items} Tu Carrito
+          <img src={cartlogo} className="cartsvg" alt=""/>{cartLength} Tu Carrito
       </Button>
       <Modal
         show={modalShow}

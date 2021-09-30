@@ -28,7 +28,6 @@ React.useEffect(() => {
             setItems(data)
         }
     })
-    .then(() => console.log(items))
     .then(() => {
         let url = window.location.href;
         let params = (new URL(url)).searchParams;

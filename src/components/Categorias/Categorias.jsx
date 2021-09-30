@@ -6,7 +6,6 @@ import { getFirestore } from '../../firebase/firebase';
 function Categorias() {
 
     const [categorias, setCategorias] = React.useState([]);
-
 //FIREBASE
 React.useEffect(() => {
     const  db = getFirestore();
