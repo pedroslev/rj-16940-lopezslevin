@@ -92,7 +92,7 @@ mercadopago.preferences.create(preference)
               <div className="col-md-12 col-lg-4">
                 <div className="summary">
                   <div className="summary-item"><span className="text" style={{fontWeight: '700'}}>Subtotal:  ${total}</span><span className="price" id="cart-total"></span></div>
-                  <button className="btn btn-primary btn-lg btn-block" id="checkout-btn">Pagar</button>
+                  <button className="btn btn-primary btn-lg btn-block" id="checkout-btn">Terminar mi compra</button>
                 </div>
               </div>
             </div>

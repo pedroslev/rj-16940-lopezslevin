@@ -1,11 +1,9 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
-import { CartProvider, useCart } from '../../context/CartContext';
+import { useCart } from '../../context/CartContext';
 import trash from './media/trash.svg'
 import { Link } from 'react-router-dom';
-import Checkout from "../../pages/Checkout";
-import { unmountComponentAtNode } from 'react-dom';
 
 function Cart(props) {
 
@@ -68,7 +66,13 @@ function Cart(props) {
       <Modal.Footer>
         <Button variant="danger" onClick={ClearCart}>Vaciar</Button>
         <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
-        <Link to="/checkout" ><Button variant="success" onClick={props.onHide}>Comprar</Button></ Link>
+        {
+        largo != 0 ?
+        <Link to="/checkout" ><Button variant="success" id="comprar" onClick={props.onHide}>Comprar</Button></ Link>
+        :
+        <p></p>
+        }
+        
       </Modal.Footer>
     </Modal>
     </>
