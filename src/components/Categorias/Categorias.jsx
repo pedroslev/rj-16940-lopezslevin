@@ -1,25 +1,28 @@
 import React from 'react'
-import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import './css/categorias.css';
+import { getFirestore } from '../../firebase/firebase';
 
 function Categorias() {
 
     const [categorias, setCategorias] = React.useState([]);
 
-    React.useEffect(() => {
-        const urldb = "http://localhost:3001/categorias/";
-        fetch(urldb)
-        .then((response) => {
-            if(response.ok){
-                return response.json();
-            }else{
-                throw response;
-            }
-        })
-        .then((categorias) => setCategorias(categorias))
-        .catch((error) => console.log(`Error al cargar datos de json-db: ${error.status}`))
-    }, []);
+//FIREBASE
+React.useEffect(() => {
+    const  db = getFirestore();
+    const productsCollection = db.collection('categorias');
+    productsCollection
+    .get()
+    .then((querySnapshot) => {
+        if(querySnapshot.empty){
+            console.log("No hay productos")
+        }else{
+            const data = querySnapshot.docs.map((doc) => (doc.data()));
+            setCategorias(data)
+        }
+    })
+    .catch((error) => console.log(`Error al cargar datos de firebase: ${error.status}`))
+}, []);
 
     return (
     <div className="categorias">
@@ -30,8 +33,8 @@ function Categorias() {
 
     <Dropdown.Menu>
     <Dropdown.Item href="/" >Todo</Dropdown.Item>
-        {   
-            categorias.map((categorias) => {return <Dropdown.Item href={'/?categoria='+categorias}>{categorias}</Dropdown.Item>})
+        {
+            categorias.map((categorias) => {return <Dropdown.Item href={'/?categoria='+categorias.categoria}>{categorias.categoria}</Dropdown.Item>})
         }
     </Dropdown.Menu>
   </Dropdown>

@@ -5,7 +5,7 @@ import NavBar from './components/NavBar/NavBar.js';
 import NotFound from './pages/NotFound';
 import Footer from './components/Footer/Footer.jsx'
 import { CartProvider } from "./context/CartContext.js";
-import Buy from "./pages/Buy";
+import Checkout from "./pages/Checkout";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Products} />
-        <Route exact path="/buy" component={Buy} />
+        <Route exact path="/checkout" component={Checkout} />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />

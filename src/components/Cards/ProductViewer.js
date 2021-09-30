@@ -7,30 +7,38 @@ import { Container} from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import {useCart} from '../../context/CartContext.js';
+import { getFirestore } from '../../firebase/firebase';
 
 function ProductViewer() {
     //fetch a productos
     const [items, setItems] = React.useState([]);
     const [categoria, setCategoria] = React.useState([]);
-    React.useEffect(() => {
-        const url = "http://localhost:3001/products";
-        fetch(url)
-        .then((response) => {
-            if(response.ok){
-                return response.json();
-            }else{
-                throw response;
-            }
-        })
-        .then((items) => setItems(items))
-        .then(()=>{
+
+//FIREBASE
+React.useEffect(() => {
+    const  db = getFirestore();
+    const productsCollection = db.collection('products');
+    productsCollection
+    .get()
+    .then((querySnapshot) => {
+        if(querySnapshot.empty){
+            console.log("No hay productos")
+        }else{
+            const data = querySnapshot.docs.map((doc) => ({id: doc.id, ...doc.data() }));
+            setItems(data)
+        }
+    })
+    .then(() => console.log(items))
+    .then(() => {
         let url = window.location.href;
         let params = (new URL(url)).searchParams;
         let categoria = params.get('categoria')
         setCategoria(categoria)
-        })
-        .catch((error) => console.log(`Error al cargar datos de json-db: ${error.status}`))
-    }, []);
+    })
+    .catch((error) => console.log(`Error al cargar datos de firebase: ${error.status}`))
+}, []);
+
+
 
     const { AddToCart } = useCart();
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Navbar from '../components/NavBar/NavBar'
-import Buy from '../pages/Buy'
+import Buy from '../pages/Checkout'
 
 const CartContext = React.createContext([]);
 

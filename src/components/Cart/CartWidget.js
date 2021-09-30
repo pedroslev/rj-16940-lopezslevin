@@ -8,7 +8,7 @@ function Cart(props) {
     const [modalShow, setModalShow] = React.useState(false);
     return (
     <>
-    <div className="Cart sticky">
+    <div className="Cart sticky" id="cartwidget">
     <Button variant="dark" onClick={() => setModalShow(true)}>
           {/* no esta cargando la imagen svg */}
           <img src={cartlogo} className="cartsvg" alt=""/>{props.items} Tu Carrito

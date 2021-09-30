@@ -3,9 +3,9 @@ import '../css/buy/buy.css'
 import icon from "../media/icon.png"
 import { useCart } from '../context/CartContext';
 
-function Buy() {
+function Checkout(props) {
 
-  const {cart, AddToCart} = useCart();
+  const {cart} = useCart(props);
   console.log(cart)
 
     return (
@@ -50,4 +50,4 @@ function Buy() {
     )
 }
 
-export default Buy
+export default Checkout

@@ -1,8 +1,11 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
-import { useCart } from '../../context/CartContext';
+import { CartProvider, useCart } from '../../context/CartContext';
 import trash from './media/trash.svg'
+import { Link } from 'react-router-dom';
+import Checkout from "../../pages/Checkout";
+import { unmountComponentAtNode } from 'react-dom';
 
 function Cart(props) {
 
@@ -37,15 +40,23 @@ function Cart(props) {
             </thead>
             <tbody id="order">
             {
-            cart.map((products) => {
-                return  <tr>
-                <td>{products.title}</td>
-                <td>{products.cantidad}</td>
-                <td>${products.price}</td>
-                <td><button className="btn btn-outline-secondary" onClick={() => DeleteCart(products.id)}><img style={{width: '1em'}} src={trash}></img></button></td>
-              </tr>
-              })
-            }
+        cart.length > 0 ? cart.map((products) => {
+        return(
+            <tr>
+              <td>{products.title}</td>
+              <td>{products.cantidad}</td>
+              <td>${products.price}</td>
+              <td><button className="btn btn-outline-secondary" onClick={() => DeleteCart(products.id)}><img style={{width: '1em'}} src={trash}></img></button></td>
+            </tr>
+        )})
+      : 
+      <tr>
+        <td><h3>No</h3></td>
+        <td><h3>hay</h3></td>
+        <td><h3>productos</h3></td>
+      </tr>
+      }
+      
             <tr id="totalprice">
               <td></td>
               <td>Total: </td>
@@ -57,7 +68,7 @@ function Cart(props) {
       <Modal.Footer>
         <Button variant="danger" onClick={ClearCart}>Vaciar</Button>
         <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
-        <Button variant="success" href="/buy">Comprar</Button>
+        <Link to="/checkout" ><Button variant="success" onClick={props.onHide}>Comprar</Button></ Link>
       </Modal.Footer>
     </Modal>
     </>
