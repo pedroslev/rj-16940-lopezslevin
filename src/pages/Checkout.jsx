@@ -2,43 +2,35 @@ import React from 'react'
 import '../css/buy/buy.css'
 import icon from "../media/icon.png"
 import { useCart } from '../context/CartContext';
+import { getFirestore } from '../firebase/firebase';
 
 function Checkout(props) {
   document.getElementById('cartwidget').classList.add('Ocultar')
   const {cart} = useCart(props);
+  console.log(cart)
   let total = 0
   for (let index = 0; index < cart.length; index++) {
     total = total + (cart[index].price * cart[index].cantidad)
   }
 
-  // SDK de Mercado Pago
-  const mercadopago = require ('mercadopago');
-  // Agrega credenciales
-  mercadopago.configure({
-  access_token: 'TEST-5216061197824640-021822-1b407daa90b33541af8a578bfb31b3ee-264568386'
-  });
+
+
+function Payment(nombre, phone, email){
+
+
+  const  db = getFirestore();
+  const orders = db.collection('orders');
+  let newOrder = {buyer: {nombre: nombre, telefono: phone, mail: email},
+   items: cart,
+   date: new Date(),
+   total: total}
+
+   orders.add(newOrder)
+   .then((docRef) => console.log(docRef.id))
+   .catch((error) => console.log(error))
 
   
-// Crea un objeto de preferencia
-let preference = {
-  items: [
-    {
-      title: 'DevBar Product',
-      unit_price: total,
-      quantity: 1,
-    }
-  ]
-};
-
-mercadopago.preferences.create(preference)
-.then(function(response){
-// Este valor reemplazará el string "<%= global.id %>" en tu HTML
-  global.id = response.body.id;
-}).catch(function(error){
-  console.log(error);
-});
-
-
+}
     return (
       <>
         <section className="shopping-cart dark">
@@ -83,6 +75,14 @@ mercadopago.preferences.create(preference)
                             </tbody>
                           </table>
                           </div>
+                          <div className="col-md-12 product-detail">
+                            <label for="PayerName" style={{width: '8em'}}><h5>Nombre *</h5></label>
+                            <input style={{width: '10em'}} className="form-control" id="PayerName" />
+                            <label for="PayerPhone" style={{width: '8em'}}><h5>Telefono *</h5></label>
+                            <input style={{width: '10em'}} className="form-control" id="PayerPhone" />
+                            <label for="PayerEmail" style={{width: '8em'}}><h5>Email *</h5></label>
+                            <input style={{width: '10em'}} className="form-control" id="PayerEmail" />
+              </div>
                         </div>
                       </div>
                     </div>
@@ -92,7 +92,7 @@ mercadopago.preferences.create(preference)
               <div className="col-md-12 col-lg-4">
                 <div className="summary">
                   <div className="summary-item"><span className="text" style={{fontWeight: '700'}}>Subtotal:  ${total}</span><span className="price" id="cart-total"></span></div>
-                  <button className="btn btn-primary btn-lg btn-block" id="checkout-btn">Terminar mi compra</button>
+                  <button className="btn btn-primary btn-lg btn-block" onClick={() => {Payment(document.getElementById('PayerName').value, document.getElementById('PayerPhone').value, document.getElementById('PayerEmail').value)}}>Terminar mi compra</button>
                 </div>
               </div>
             </div>
