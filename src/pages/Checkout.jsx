@@ -28,7 +28,7 @@ function Payment(nombre, phone, email){
    total: total}
 
    orders.add(newOrder)
-   .then((docRef) => console.log(docRef.id))
+   .finally(() => alert("Su orden ha sido registrada con exito!"))
    .catch((error) => console.log(error))
 
   
