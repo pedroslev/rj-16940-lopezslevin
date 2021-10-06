@@ -20,8 +20,10 @@ function Payment(nombre, phone, email){
 
   const  db = getFirestore();
   const orders = db.collection('orders');
+  //convert custom react js object into pure javascript object to firebase add Doc fix
+  const carro = cart.map((obj)=> {return Object.assign({}, obj)});
   let newOrder = {buyer: {nombre: nombre, telefono: phone, mail: email},
-   items: cart,
+   items: carro,
    date: new Date(),
    total: total}
 

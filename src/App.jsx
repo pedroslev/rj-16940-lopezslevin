@@ -6,6 +6,7 @@ import NotFound from './pages/NotFound';
 import Footer from './components/Footer/Footer.jsx'
 import { CartProvider } from "./context/CartContext.js";
 import Checkout from "./pages/Checkout";
+import Orders from './pages/Orders.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Products} />
         <Route exact path="/checkout" component={Checkout} />
+        <Route exact path="/orders" component={Orders} />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
