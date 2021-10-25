@@ -3,6 +3,7 @@ import '../css/buy/buy.css'
 import icon from "../media/icon.png"
 import { useCart } from '../context/CartContext';
 import { getFirestore } from '../firebase/firebase';
+import { Link } from 'react-router-dom';
 
 function Checkout(props) {
   document.getElementById('cartwidget').classList.add('Ocultar')
@@ -28,7 +29,7 @@ function Payment(nombre, phone, email){
    total: total}
 
    orders.add(newOrder)
-   .finally(() => alert("Su orden ha sido registrada con exito!"))
+   //.finally(() => location.href(/success))
    .catch((error) => console.log(error))
 
   
@@ -49,7 +50,7 @@ function Payment(nombre, phone, email){
                       <div className="product-details">
                         <div className="row justify-content-md-center">
                           <div className="col-md-3">
-                            <img className="img-fluid mx-auto d-block image" src={icon} />
+                            <img className="img-fluid mx-auto d-block image" alt="icono" src={icon} />
                           </div>
                           <div className="col-md-4 product-detail">
                             <h5>Productos</h5>
@@ -94,7 +95,7 @@ function Payment(nombre, phone, email){
               <div className="col-md-12 col-lg-4">
                 <div className="summary">
                   <div className="summary-item"><span className="text" style={{fontWeight: '700'}}>Subtotal:  ${total}</span><span className="price" id="cart-total"></span></div>
-                  <button className="btn btn-primary btn-lg btn-block" onClick={() => {Payment(document.getElementById('PayerName').value, document.getElementById('PayerPhone').value, document.getElementById('PayerEmail').value)}}>Terminar mi compra</button>
+                  <Link to="/success" onClick={() => {Payment(document.getElementById('PayerName').value, document.getElementById('PayerPhone').value, document.getElementById('PayerEmail').value)}}><button className="btn btn-primary btn-lg btn-block">Terminar mi compra</button></ Link>
                 </div>
               </div>
             </div>

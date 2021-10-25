@@ -7,7 +7,7 @@ const CartContext = React.createContext([]);
 export const CartProvider = ({children}) => {
 
     const [cart, setCart] = React.useState([])
-    const [carro, setCarro] = React.useState([]);
+    //const [carro, setCarro] = React.useState([]);
     const [cartLength, setLength] = React.useState('');
     class cartdetail {
         constructor(id, title, price, cantidad){

@@ -44,7 +44,7 @@ function Cart(props) {
               <td>{products.title}</td>
               <td>{products.cantidad}</td>
               <td>${products.price}</td>
-              <td><button className="btn btn-outline-secondary" onClick={() => DeleteCart(products.id)}><img style={{width: '1em'}} src={trash}></img></button></td>
+              <td><button className="btn btn-outline-secondary" onClick={() => DeleteCart(products.id)}><img alt="trash icon" style={{width: '1em'}} src={trash}></img></button></td>
             </tr>
         )})
       : 

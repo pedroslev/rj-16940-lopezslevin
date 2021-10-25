@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer.jsx'
 import { CartProvider } from "./context/CartContext.js";
 import Checkout from "./pages/Checkout";
 import Orders from './pages/Orders.jsx';
+import Success from './pages/Success.jsx';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/products" component={Products} />
         <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/orders" component={Orders} />
+        <Route exact path="/success" component={Success} />
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />
