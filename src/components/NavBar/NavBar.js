@@ -2,7 +2,6 @@ import { Navbar,Nav, Container } from 'react-bootstrap'
 import CartWidget from '../Cart/CartWidget.js';
 
 function NavBar() {
-  
     return (
         
        <Navbar bg="dark" variant="dark">

@@ -49,22 +49,29 @@ function Cart(props) {
         )})
       : 
       <tr>
-        <td><h3>No</h3></td>
-        <td><h3>hay</h3></td>
-        <td><h3>productos</h3></td>
       </tr>
       }
-      
-            <tr id="totalprice">
-              <td></td>
-              <td>Total: </td>
-              <td>${total}</td>
-            </tr>
+      {
+        largo != 0 ?
+        <tr id="totalprice">
+        <td></td>
+        <td>Total: </td>
+        <td>${total}</td>
+      </tr>
+      :
+      <p></p>
+      }
+
             </tbody>
           </table>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="danger" onClick={ClearCart}>Vaciar</Button>
+        {largo != 0 ?
+          <Button variant="danger" id="emptyCart" onClick={ClearCart}>Vaciar</Button>
+          :
+          <p></p>
+        }
+        
         <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
         {
         largo != 0 ?

@@ -17,8 +17,7 @@ function Checkout(props) {
 
 
 function Payment(nombre, phone, email){
-
-
+if(nombre == '' || phone == '' || email == ''){return(alert("por favor llena los datos necesarios"))}
   const  db = getFirestore();
   const orders = db.collection('orders');
   //convert custom react js object into pure javascript object to firebase add Doc fix
@@ -29,11 +28,10 @@ function Payment(nombre, phone, email){
    total: total}
 
    orders.add(newOrder)
-   //.finally(() => location.href(/success))
+   .finally(() => window.location.href = "/success")
    .catch((error) => console.log(error))
-
-  
 }
+
     return (
       <>
         <section className="shopping-cart dark">
@@ -95,7 +93,7 @@ function Payment(nombre, phone, email){
               <div className="col-md-12 col-lg-4">
                 <div className="summary">
                   <div className="summary-item"><span className="text" style={{fontWeight: '700'}}>Subtotal:  ${total}</span><span className="price" id="cart-total"></span></div>
-                  <Link to="/success" onClick={() => {Payment(document.getElementById('PayerName').value, document.getElementById('PayerPhone').value, document.getElementById('PayerEmail').value)}}><button className="btn btn-primary btn-lg btn-block">Terminar mi compra</button></ Link>
+                  <button onClick={() => {Payment(document.getElementById('PayerName').value, document.getElementById('PayerPhone').value, document.getElementById('PayerEmail').value)}} className="btn btn-primary btn-lg btn-block">Terminar mi compra</button>
                 </div>
               </div>
             </div>
